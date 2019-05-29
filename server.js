@@ -2,46 +2,14 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
+const students = require('./data/students');
+console.log(students);
 
-console.log('First');
-setTimeout(() => {
-  console.log('Second');
-});
-console.log('Third');
+//body-parser middleware to get data from req.body
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
-const students = [
-  {
-    id: 1,
-    name: 'Asab',
-    country: 'Finland',
-    age: 250,
-    bio: 'A teacher and loves to teach.'
-  },
-  {
-    id: 2,
-    name: 'Kunjan',
-    country: 'Finland',
-    age: 25,
-    bio: 'A Web ninja.'
-  },
-  {
-    id: 3,
-    name: 'Masood',
-    country: 'Finland',
-    age: 28,
-    bio: 'A react ninja.'
-  },
-  {
-    id: 4,
-    name: 'Xurxe',
-    country: 'Finland',
-    age: 25,
-    bio: 'A ninja of everything.'
-  }
-];
 
 app.get('/', (req, res) => res.send('Helllo, express'));
 app.get('/students', (req, res) => {

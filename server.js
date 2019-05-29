@@ -11,7 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('Helllo, express'));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
 app.get('/students', (req, res) => {
   res.json(students);
 });

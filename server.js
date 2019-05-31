@@ -43,7 +43,7 @@ app.get('/students/:id', (req, res) => {
 app.get('/api/v1/students', (req, res) => {
   res.json(students);
 });
-app.get('api/v1/students/:search', (req, res) => {
+app.get('/api/v1/students/:search', (req, res) => {
   const id = parseInt(req.params.search);
   const name = req.params.search.toLowerCase();
 

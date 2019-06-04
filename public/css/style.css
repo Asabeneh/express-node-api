@@ -1,8 +1,9 @@
 body {
+  background: lightblue;
 }
 
 img {
   max-width: 25%;
   min-width: 25%;
-  border:2px solid rgb(223, 214, 214);
+  border: 2px solid rgb(223, 214, 214);
 }

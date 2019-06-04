@@ -6,34 +6,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Student = require('./models/Student');
 
-const teachers = [
-  {
-    name: 'Asab',
-    country: 'Galicia',
-    age: 25,
-    bio: 'A web Developer'
- 
-  },
-  {
-    name: 'Eyob',
-    country: 'India',
-    age: 25,
-    bio: 'A web Developer'
-  },
-  {
-    name: 'Kunjan',
-    country: 'Nepal',
-    age: 25,
-    bio: 'A web Developer'
-  },
-  {
-    name: 'Masood',
-    country: 'Afgan',
-    age: 25,
-    bio: 'A web Developer'
-  }
-];
-
 mongoose.connect(process.env.MONGODB_URI, err => {
   if (err) {
     console.log(err);
@@ -60,8 +32,6 @@ const person = {
 };
 
 app.get('/', (req, res) => {
-  Student.collection.insertMany(students)
-  
   res.render('pages/index', { person });
 });
 app.get('/about', (req, res) => {
@@ -74,14 +44,13 @@ app.get('/teachers', (req, res) => {
   res.json(teachers);
 });
 app.get('/students', (req, res) => {
-  res.json(students);
-  // Student.find({}, (err, students) => {
-  //   if (err) {
-  //     res.status = 400;
-  //     res.send('Not found');
-  //   }
-  //   res.render('pages/students', { students });
-  // });
+  Student.find({}, (err, students) => {
+    if (err) {
+      res.status = 400;
+      res.send('Not found');
+    }
+    res.render('pages/students', { students });
+  });
 });
 app.get('/students/:id', (req, res) => {
   const id = req.params.id;

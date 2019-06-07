@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(); // loads environment variables from a .env file into process.env
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -13,7 +13,7 @@ app.use((req, res, next) => {
   console.log(`The user is checking ${req.url} at ${time}`);
   next();
 });
-mongoose.connect(process.env.MONGODB_URI, err => {
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, err => {
   if (err) {
     console.log(err);
     return;

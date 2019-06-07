@@ -64,14 +64,13 @@ function showEditStudent(req, res) {
 }
 
 function addStudent(req, res) {
-  console.log(req.body);
   const newStudent = new Student(req.body);
   newStudent.save(err => {
     if (err) {
       console.log(err);
       return;
     }
-    res.send('/students');
+    res.redirect('/students');
   });
 }
 function deleteStudent(req, res) {

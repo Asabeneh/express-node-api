@@ -3,16 +3,22 @@ const Schema = mongoose.Schema;
 
 const studentSchema = new Schema({
   name: {
-    type: String
+    type: String,
+    required: true,
+    min: 3,
+    max: 15
   },
   country: {
-    type: String
+    type: String,
+    required: true
   },
   age: {
-    type: Number
+    type: Number,
+    required: true
   },
   bio: {
-    type: String
+    type: String,
+    required: true
   },
   createAt: {
     type: Date

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Node Express API</title>
+  </head>
+
+  <body>
+    <header>
+      <% include ../partials/navbar %>
+      <h1>Add a Student</h1>
+    </header>
+    <form action="/api/v1/students" method="POST">
+      <label>Name:</label>
+      <input type="text" name="name" placeholder="Name" /> <br />
+      <label>Age: </label>
+      <input type="text" name="age" placeholder="Age" /> <br />
+      <label>Country: </label>
+      <input type="text" name="country" placeholder="Country" /> <br />
+      <label>Your bio: </label><br />
+      <textarea name="bio"></textarea> <br />
+      <input type="submit" value="Add Student" />
+    </form>
+  </body>
+</html>

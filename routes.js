@@ -24,9 +24,7 @@ studentRoutes.get('/api/v1/students/:id/delete', deleteStudent);
 studentRoutes.get('/', showHome);
 studentRoutes.get('/about', showAbout);
 studentRoutes.get('/contacts', showContact);
-studentRoutes.get('/teachers', (req, res) => {
-  res.json(teachers);
-});
+
 studentRoutes.get('/students', showStudents);
 studentRoutes.get('/add-student', showAddStudent);
 studentRoutes.get('/edit-student/:id', showEditStudent);

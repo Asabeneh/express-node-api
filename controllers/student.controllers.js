@@ -1,9 +1,6 @@
 const Student = require('../models/Student');
 function showHome(req, res) {
-  const person = {
-    name: 'Asab'
-  };
-  res.render('pages/index', { person });
+  res.render('pages/index');
 }
 function showAbout(req, res) {
   res.render('pages/about');
@@ -14,8 +11,7 @@ function showContact(req, res) {
 function showStudents(req, res) {
   Student.find({}, (err, students) => {
     if (err) {
-      res.status = 400;
-      res.send('Not found');
+      return res.status(404).send('Students Not found')
     }
     res.render('pages/students', { students });
   });
@@ -24,8 +20,7 @@ function showStudent(req, res) {
   const id = req.params.id;
   Student.findOne({ _id: id }, (err, student) => {
     if (err) {
-      res.status = 400;
-      res.send('Not found');
+      return res.status(404).send('A student not found')
     }
     res.render('pages/student', { student });
   });
@@ -33,8 +28,7 @@ function showStudent(req, res) {
 function allStudents(req, res) {
   Student.find({}, (err, students) => {
     if (err) {
-      res.status = 404;
-      return;
+       return res.status(404).send('Students Not found')
     }
     res.json(students);
   });

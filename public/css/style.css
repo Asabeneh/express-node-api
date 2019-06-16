@@ -9,6 +9,7 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'Nunito', sans-serif;
+  overflow-y: scroll; overflow-x:hidden;
   
 
 }
@@ -20,7 +21,6 @@ html, body {
  */
 .wrapper{
   min-height: 100%;
-  min-width:400px;
   position: relative;
 letter-spacing:1.25px;
 }
@@ -36,7 +36,7 @@ header {
   background: rgb(37, 36, 36);
   color:white;
   min-height: 300px;;
-  font-size: 150%;
+  font-size: 130%;
 
 }
 /* 
@@ -103,18 +103,13 @@ img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
-  /* width:80%; */
   margin: auto;
   color:white ;
 }
 .navbar-nav{
   list-style-type:none;
   display: block;
-  min-width:130px;
-  /* max-width: 15%; */
-  /* min-height: 50px; 
-  max-height: 50px;  */
+  min-width:120px;
   text-align:center;
   padding:5px;
   margin:3px;
@@ -135,12 +130,14 @@ img {
 }
 .brand-name{
   font-family: "Helvetica neue", "open sans", sans-serif;
-  font-size: 32px;
-  color:rgb(184, 138, 138);
+  font-size: 38px;
+ color:rgb(167,167,167);
  background: rgb(48, 47, 47);
- padding: 10px;
- border-radius: 10px;
+ padding: 5px;
+ border-radius: 5px;
  text-align: center;
+ text-decoration: none;
+ cursor: pointer;
  
 }
 /* 
@@ -164,7 +161,7 @@ form {
   margin:auto;
 }
 input {
- height: 40px;
+ height: 45px;
  padding:3px;
  width:100%;
  margin: 3px;
@@ -226,7 +223,7 @@ pre{
     background: #fff;
     border:1px solid rgb(240, 237, 237);
     border-radius: 3px;
-    min-width: 400px;
+    min-width: 325px;
     max-width:450px;
     color:rgb(167,167,167)
 }
@@ -327,14 +324,38 @@ mobile version
 media query
 */
 @media screen and (max-width: 600px) {
-
   .navbar-wrapper{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    flex-wrap: nowrap;
+    width:95%;
+  }
+  .navbar-nav {
+    width:100%;
+  }
+   .navbar-wrapper > div {
+   width:100%;
+   margin: 0;
+   padding:0;
+ }
+ .first-item {
+   text-align: center;
+    color:rgb(167,167,167);
+ background: rgb(48, 47, 47);
+ }
+  
+  .brand-name{
+ padding: 0;
+ border-radius: 0;
+ font-size: 32px;
+
+}
+ 
+  main{
+    margin:0
   }
   h3{
-    font-size:20px;
+    font-size:18px;
     width:100%;
   }
   .web-tech {
@@ -345,12 +366,9 @@ media query
   .form-row {
     width: 100%;
   }
-  main{
-    margin:auto 20px;
-  }
+
   article {
-    min-width: 450px;
+    font-size: 18px;
   }
   
- 
 }

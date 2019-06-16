@@ -8,6 +8,9 @@ function showAbout(req, res) {
 function showContact(req, res) {
   res.render('pages/contact');
 }
+function showAPIPage (req, res) {
+  res.render('pages/api');
+}
 function showStudents(req, res) {
   Student.find({}, (err, students) => {
     if (err) {
@@ -25,6 +28,7 @@ function showStudent(req, res) {
     res.render('pages/student', { student });
   });
 }
+
 function allStudents(req, res) {
   Student.find({}, (err, students) => {
     if (err) {
@@ -96,6 +100,7 @@ module.exports = {
   showHome,
   showAbout,
   showContact,
+  showAPIPage,
   showStudents,
   showStudent,
   allStudents,

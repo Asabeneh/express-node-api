@@ -22,7 +22,6 @@ html, body {
   min-height: 100%;
   position: relative;
 letter-spacing:1.25px;
-margin:5px;
 }
 /* 
 === HEADER ===
@@ -63,6 +62,7 @@ text-align: center;
 width: 90%;
 text-transform: uppercase;
 color:rgb(167,167,167);
+
 }
 h3:hover {
   color:white;
@@ -92,7 +92,7 @@ img {
    margin:5px;
  }
 
-ul {
+.navbar {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -101,7 +101,7 @@ ul {
   margin: auto;
   color:white ;
 }
-ul li{
+.navbar-nav{
   list-style-type:none;
   display: block;
   min-width:15%;
@@ -282,4 +282,32 @@ footer {
 .about-express {
   color: rgb(85, 85, 85);
   font-size:28px;
+}
+.link {
+  text-decoration: none;
+  border-bottom: 1px solid orange;
+  padding: 5px;
+  color: rgb(85, 85, 85);
+}
+.link:hover {
+  background:orange;
+  
+}
+.ul-list{
+  position: relative;
+}
+.list {
+  list-style: none;
+  margin-left: 5px;
+  line-height: 40px;
+}
+.list::before {
+  position: absolute;
+  left:0px;
+  content: '';
+  display:inline-block;
+  width: 35px;
+  height:35px;
+  background-image: url(../assets/images/node-list-style-image.png);
+  background-size: cover;
 }

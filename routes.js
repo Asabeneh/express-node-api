@@ -4,6 +4,7 @@ const {
   showHome,
   showAbout,
   showContact,
+  showAPIPage,
   showStudents,
   showStudent,
   allStudents,
@@ -15,15 +16,16 @@ const {
   showEditStudent
 } = require('./controllers/student.controllers');
 
-studentRoutes.get('/api/v1/students', allStudents);
-studentRoutes.post('/api/v1/students', addStudent);
-studentRoutes.get('/api/v1/students/:search', singleStudent);
-studentRoutes.post('/api/v1/students/:id/edit', editStudent);
-studentRoutes.get('/api/v1/students/:id/delete', deleteStudent);
+studentRoutes.get('/api/v1.0/students', allStudents);
+studentRoutes.post('/api/v1.0/students', addStudent);
+studentRoutes.get('/api/v1.0/students/:search', singleStudent);
+studentRoutes.post('/api/v1.0/students/:id/edit', editStudent);
+studentRoutes.get('/api/v1.0/students/:id/delete', deleteStudent);
 
 studentRoutes.get('/', showHome);
 studentRoutes.get('/about', showAbout);
 studentRoutes.get('/contacts', showContact);
+studentRoutes.get('/api', showAPIPage);
 
 studentRoutes.get('/students', showStudents);
 studentRoutes.get('/add-student', showAddStudent);

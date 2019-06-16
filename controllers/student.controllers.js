@@ -28,7 +28,7 @@ function showStudent(req, res) {
 function allStudents(req, res) {
   Student.find({}, (err, students) => {
     if (err) {
-       return res.status(404).send('Students Not found')
+       return res.status(404).send('Students Not found');
     }
     res.json(students);
   });
@@ -37,8 +37,7 @@ function singleStudent(req, res) {
   const id = req.params.search;
   Student.findOne({ _id: id }, (err, student) => {
     if (err) {
-      res.status = 404;
-      return;
+      return res.status(404).send('Student Not found')
     }
     res.json(student);
   });
@@ -50,8 +49,7 @@ function showEditStudent(req, res) {
   const _id = req.params.id;
   Student.findOne({ _id }, (err, student) => {
     if (err) {
-      res.status = 404;
-      return;
+      return res.status(404).send('Student Not found')
     }
     res.render('pages/edit-student', { student });
   });
@@ -62,7 +60,7 @@ function addStudent(req, res) {
   newStudent.save(err => {
     if (err) {
       console.log(err);
-      return;
+      return res.status(404).json(err)
     }
     res.redirect('/students');
   });
@@ -71,8 +69,8 @@ function deleteStudent(req, res) {
   const id = req.params.id;
   Student.deleteOne({ _id: id }, (err, student) => {
     if (err) {
-      res.status = 400;
-      res.send('Not found');
+      return res.status(404).send('Not found')
+      
     }
     res.redirect('/students');
   });
@@ -87,8 +85,7 @@ function editStudent(req, res) {
     student.bio = bio;
     student.save(err => {
       if (err) {
-        res.status = 404;
-        console.log(err);
+        return res.status(404).send('Not found')
       }
       res.redirect('/students');
     });

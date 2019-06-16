@@ -1,9 +1,220 @@
-body {
-  background: lightblue;
+/* 
+=== GENERAL ===
+ */
+*{
+  box-sizing: border-box;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Nunito', sans-serif !important;
+
+}
+/* 
+=== wrapper for header, main and footer ===
+ */
+.wrapper{
+  min-height: 100%;
+  position: relative;
+letter-spacing:1.25px;
+margin:5px;
+}
+/* 
+=== HEADER ===
+ */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:25px 0px;
+  background: rgb(37, 36, 36);
+  color:white;
+  height: 250px;;
+  font-size: 150%;
+
+}
+/* 
+=== MAIN ===
+ */
+main {
+  padding: 10px ;
+  padding-bottom: 150px;
+  width: 95%;
+  margin: auto;
+  font-size: 150%;
+
+}
+/* 
+=== TITLES ===
+ */
+h3 {
+background: rgb(48, 47, 47);
+margin: 25px auto;
+padding:10px;
+color:white;
+font-weight: 100;
+border-radius: 5px;
+text-align: center;
+width: 95%;
+text-transform: uppercase;
+
+}
+/* 
+=== IMAGE ===
+ */
 
 img {
-  max-width: 25%;
-  min-width: 25%;
-  border: 2px solid rgb(223, 214, 214);
+  max-width: 75%;
+  min-width: 75%;
+  margin:5px;
+  padding:10px;
+  box-shadow: 0px 0px 6px 2px rgb(241, 237, 237);
+}
+/* 
+=== HEADER nav ===
+ */
+
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width:80%;
+  margin: auto;
+  color:white ;
+}
+ul li{
+  list-style-type:none;
+  display: block;
+  min-width:15%;
+  max-width: 15%;
+  min-height: 50px;
+  max-height: 50px;
+  text-align:center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding:5px;
+   border:1px solid rgba(251, 164, 3, 0.1);
+}
+.nav-link{
+  font-size:20px;
+  color:white ;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+}
+.nav-link:hover{
+  color:#222;
+  border-bottom: 2px solid orange;
+  color:white ;
+ 
+}
+/* 
+=== Add FORM ===
+ */
+form {
+  margin:auto;
+}
+input {
+ height: 35px;
+ padding:3px;
+ width:75%;
+ margin: 3px;
+ text-indent: 10px;
+ outline: none;
+ border-radius: 3px;
+ border:1px solid black;
+}
+input:focus, input:hover, textarea:focus, textarea:hover{
+  border:1px solid orange;
+}
+textarea{
+  width:75%;
+  height:100px;
+  outline: none;
+   border-radius: 3px;
+   resize: none;
+}
+input::placeholder{
+  font-weight: 100;
+}
+.form-row{
+  width:45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+
+}
+/* 
+=== button ===
+ */
+
+.btn{
+ width:120px;
+ height:40px;
+ outline: none;
+ border-radius: 3px;
+
+}
+/* 
+=== images wrapper===
+ */
+.web-tech{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.web-tech > div {
+  width:25%;
+  margin:10px;
+}
+/* 
+=== code block ===
+ */
+pre{
+  font-family: Consolas,Monaco,andale mono,monospace;
+    padding: 5px 10px;
+    background: #fff;
+    border: 1px solid rgba(119, 119, 212,0.5);
+    border-radius: 3px;
+    max-width: 475px;
+    color:rgb(119, 119, 212);
+}
+/* 
+=== in students.ejs page ===
+ */
+.student-link{
+  text-decoration: none;
+  padding: 0;
+  color:#222;
+
+}
+/* 
+=== student name ===
+ */
+.student-name {
+  background-image: linear-gradient(to right, #222 , rgb(233, 122, 71));
+   font-size: 24px;
+}
+
+/* 
+=== FOOTER ===
+ */
+footer {
+ display: flex;
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+ height: 150px;
+ background: rgb(37, 36, 36);
+ align-items:center;
 }

@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <% include ../partials/head %>
     <title>Node Express API</title>
   </head>
 
   <body>
-    <header>
-      <% include ../partials/navbar %>
-      <h1>Students</h1>
-    </header>
-    <h2>Length:<%= students.length %></h2>
-    <div>
-      <% for(const student of students) { %>
-      <a href="/students/<%= student.id %>">
-        <div>
-          <h2><%= student.name %></h2>
-          <p><%= student.country %></p>
-          <p><%= student.age %></p>
-          <% } %>
-        </div>
-      </a>
+    <div class="wrapper container-fluid">
+      <header class="jumbotron text-center">
+        <% include ../partials/navbar %>
+        <h3>Students: <%= students.length %></h3>
+      </header>
+     <main class="container">
+          <% for(const student of students) { %>
+          <a href="/students/<%= student.id %>" class="student-link">
+            <div>
+              <h2><%= student.name %></h2>
+              <p><%= student.country %></p>
+              <p><%= student.age %></p>
+              <hr />
+              <% } %>
+            </div>
+          </a>
+     </main>
+      <!-- footer -->
+      
+      <% include ../partials/footer %>
+     
+    </div>
+    
     </div>
   </body>
 </html>

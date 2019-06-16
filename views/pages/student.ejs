@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Node Express API</title>
+    <% include ../partials/head %>
+  <title>Node Express API</title>
+  <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <header>
-      <% include ../partials/navbar %>
-      <h1>Student Detail</h1>
-      <div>
-        <% if(student) { %>
-        <h2><%= student.name %></h2>
-        <p><%= student.country %></p>
-        <p><%= student.age %></p>
-        <p><%= student.bio %></p>
-        <a href="/edit-student/<%= student._id %>">Edit</a>
-        <a href="/api/v1/students/<%= student._id %>/delete">Delete</a>
-        <% } %>
-      </div>
-    </header>
+    <div class="wrapper container-fluid">
+      <header class="jumbotron text-center">
+        <% include ../partials/navbar %>
+        <h3>Student Detail</h3>
+      </header>
+      <main class="container">
+        <div>
+          <% if(student) { %>
+          <h3 class="student-name"><%= student.name.toUpperCase() %></h3>
+          <p>Country: <%= student.country %></p>
+          <p>Age: <%= student.age %></p>
+          <p>Bio: <br /> <%= student.bio %></p>
+          <a href="/edit-student/<%= student._id %>" class="btn btn-primary">Edit</a>
+          <a href="/api/v1/students/<%= student._id %>/delete" class="btn btn-danger">Delete</a>
+          <% } %>
+        </div>
+
+      </main>
+      <!-- footer -->
+      
+      <% include ../partials/footer %>
+    </div>
+   
   </body>
 </html>

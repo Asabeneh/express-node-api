@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Node Express API</title>
+  <% include ../partials/head %>
+  <title>Node Express API</title>
   </head>
   <body>
-    <header>
-      <% include ../partials/navbar %>
-      <h1>Welcome Home</h1>
-    </header>
-    <h2>Front End Technologies</h2>
-    <img src="/assets/images/html.png" alt="HTML logo" />
-    <img src="/assets/images/css.png" alt="CSS logo" />
-    <img src="/assets/images/js.png" alt="JS logo" />
-    <img src="/assets/images/react.png" alt="React logo" />
-    <h2>Back End Technologies</h2>
-    <img src="/assets/images/node.png" alt="Node logo" />
-    <img src="/assets/images/mongodb.png" alt="mongodb logo" />
-    <img src="/assets/images/python.png" alt="python logo" />
+   
+<div class="wrapper container-fluid">
+  <header class="jumbotron text-center">
+    <% include ../partials/navbar %>
+    <h3>Express web Application</h3>
+  </header>
+  <main class="container">
+    <div class="row">
+        <h3>Front End Technologies</h3>
+        <div class="web-tech">
+          <div><img src="/assets/images/html.png" alt="HTML logo" /></div>
+          <div><img src="/assets/images/css.png" alt="CSS logo" /></div>
+          <div><img src="/assets/images/js.png" alt="JS logo" /></div>
+        </div>
+        <h3>Back End Technologies</h3>
+        <div class="web-tech">
+          <div><img src="/assets/images/node.png" alt="Node logo" /></div>
+          <div><img src="/assets/images/mongodb.png" alt="mongodb logo" /></div>
+          <div><img src="/assets/images/python.png" alt="python logo" /></div>
+      </div>
+    </div>
+    
+  </main>
+  <!-- footer -->
+ 
+  <% include ../partials/footer %>
+
+</div>
+
+    
   </body>
 </html>

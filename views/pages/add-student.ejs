@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Node Express API</title>
+<% include ../partials/head %>
+<title>Node Express API</title>
   </head>
+ 
 
   <body>
-    <header>
-      <% include ../partials/navbar %>
-      <h1>Add a Student</h1>
-    </header>
-    <form action="/api/v1/students" method="POST">
-      <label>Name:</label>
-      <input type="text" name="name" placeholder="Name" /> <br />
-      <label>Age: </label>
-      <input type="text" name="age" placeholder="Age" /> <br />
-      <label>Country: </label>
-      <input type="text" name="country" placeholder="Country" /> <br />
-      <label>Your bio: </label><br />
-      <textarea name="bio"></textarea> <br />
-      <input type="submit" value="Add Student" />
-    </form>
+    <div class="wrapper container-fluid">
+      <header class="jumbotron text-center">
+        <% include ../partials/navbar %>
+        <h3>Add a Student</h3>
+      </header>
+      <main class="container">
+        <form action="/api/v1/students" method="POST">
+          <div class="form-row">
+          
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Name" autofocus />
+              </div>
+      
+              <div class="form-group">
+                <label for="age">Age: </label>
+                <input type="text" name="age" id="age" class="form-control" placeholder="Age" />
+              </div>
+            
+       
+
+              <div class='form-group'>
+                <label for="country">Country: </label>
+                <input type="text" name="country" id="country" class="form-control" placeholder="Country" />
+              </div>
+         
+          
+              <div class="form-group">
+                <label for="bio">Your bio: </label>
+                <textarea name="bio" id="bio" class="form-control"></textarea>
+              </div>
+         
+          <div class="form-group">
+            <input type="submit" value="Add Student" class="btn btn-primary" />
+          </div>
+  
+
+          </div>
+         
+        </form>
+        </main>
+
+    
+  
+<!-- footer -->
+
+<% include ../partials/footer %>
+    </div>
+   
   </body>
 </html>

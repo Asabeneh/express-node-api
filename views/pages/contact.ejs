@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Node Express API</title>
-  </head>
 
-  <body>
-    <header>
+<head>
+  <% include ../partials/head %>
+  <title>Node Express API</title>
+</head>
+
+<body>
+
+  <div class="wrapper container-fluid">
+    <header class="jumbotron text-center">
       <% include ../partials/navbar %>
-      <h1>Contact</h1>
+      <h3>Contact</h3>
     </header>
-  </body>
+    <main class="container">
+      <p>Try to reach this site to learn more about  <a href="https://expressjs.com/">Express</a></p>
+
+    </main>
+    <!-- footer -->
+
+    <% include ../partials/footer %>
+
+
+  </div>
+</body>
+
 </html>

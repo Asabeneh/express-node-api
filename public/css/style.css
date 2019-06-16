@@ -20,6 +20,7 @@ html, body {
  */
 .wrapper{
   min-height: 100%;
+  min-width:400px;
   position: relative;
 letter-spacing:1.25px;
 }
@@ -44,9 +45,15 @@ header {
 main {
   padding: 10px ;
   padding-bottom: 150px;
-  margin: auto;
+  margin: 0 30px;
   font-size: 150%;
 
+}
+article {
+  width:85%;
+  margin-left:30px;
+  color: rgb(85, 85, 85);
+  font-size:24px;
 }
 /* 
 === TITLES ===
@@ -104,10 +111,10 @@ img {
 .navbar-nav{
   list-style-type:none;
   display: block;
-  min-width:15%;
+  min-width:130px;
   /* max-width: 15%; */
-  /* min-height: 50px;
-  max-height: 50px; */
+  /* min-height: 50px; 
+  max-height: 50px;  */
   text-align:center;
   padding:5px;
   margin:3px;
@@ -133,6 +140,7 @@ img {
  background: rgb(48, 47, 47);
  padding: 10px;
  border-radius: 10px;
+ text-align: center;
  
 }
 /* 
@@ -218,7 +226,8 @@ pre{
     background: #fff;
     border:1px solid rgb(240, 237, 237);
     border-radius: 3px;
-    max-width: 380px;
+    min-width: 400px;
+    max-width:450px;
     color:rgb(167,167,167)
 }
 pre:hover {
@@ -240,19 +249,7 @@ pre:hover {
   background-image: linear-gradient(to right, #222 , rgb(233, 122, 71));
    font-size: 24px;
 }
-
-/* 
-=== FOOTER ===
- */
-footer {
- display: flex;
- position: absolute;
- bottom: 0;
- width: 100%;
- height: 150px;
- background: rgb(37, 36, 36);
- align-items:center;
-}
+/* ICONS */
 .icons > a {
   display: block;
   width:50%;
@@ -279,10 +276,7 @@ footer {
   border-radius: 3px;
 
 }
-.about-express {
-  color: rgb(85, 85, 85);
-  font-size:28px;
-}
+/* LINKS */
 .link {
   text-decoration: none;
   border-bottom: 1px solid orange;
@@ -293,6 +287,7 @@ footer {
   background:orange;
   
 }
+/* UL FOR LIST */
 .ul-list{
   position: relative;
 }
@@ -310,4 +305,52 @@ footer {
   height:35px;
   background-image: url(../assets/images/node-list-style-image.png);
   background-size: cover;
+}
+
+/* 
+=== FOOTER ===
+ */
+footer {
+ display: flex;
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+ height: 150px;
+ background: rgb(37, 36, 36);
+ align-items:center;
+}
+
+
+
+/* 
+mobile version 
+media query
+*/
+@media screen and (max-width: 600px) {
+
+  .navbar-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h3{
+    font-size:20px;
+    width:100%;
+  }
+  .web-tech {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-row {
+    width: 100%;
+  }
+  main{
+    margin:auto 20px;
+  }
+  article {
+    min-width: 450px;
+  }
+  
+ 
 }

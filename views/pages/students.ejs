@@ -13,15 +13,19 @@
       </header>
      <main class="container">
           <% for(const student of students) { %>
-          <a href="/students/<%= student.id %>" class="student-link">
-            <div>
-              <h2><%= student.name %></h2>
-              <p><%= student.country %></p>
-              <p><%= student.age %></p>
-              <hr />
-              <% } %>
+            <div class="students">
+              <a href="/students/<%= student.id %>" class="student student-link">
+                <div>
+                  <h2><%= student.name %></h2>
+                  <p><%= student.country %></p>
+                  <p><%= student.age %></p>
+                  <hr />
+                  <% } %>
+                </div>
+              </a>
+
             </div>
-          </a>
+         
      </main>
       <!-- footer -->
       

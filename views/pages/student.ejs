@@ -3,7 +3,7 @@
   <head>
     <% include ../partials/head %>
   <title>Node Express API</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
@@ -19,8 +19,16 @@
           <p>Country: <%= student.country %></p>
           <p>Age: <%= student.age %></p>
           <p>Bio: <br /> <%= student.bio %></p>
-          <a href="/edit-student/<%= student._id %>" class="btn btn-primary">Edit</a>
-          <a href="/api/v1/students/<%= student._id %>/delete" class="btn btn-danger">Delete</a>
+          <div class="icons">
+            <div>
+              <a href="/edit-student/<%= student._id %>" class="btn btn-primary"><i class="far fa-edit"></i></a>
+            </div>
+            <div>
+              <a href="/api/v1/students/<%= student._id %>/delete" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+            </div>
+            
+            
+          </div>
           <% } %>
         </div>
 

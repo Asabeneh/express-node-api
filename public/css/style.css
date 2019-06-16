@@ -8,8 +8,12 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Nunito', sans-serif !important;
+  font-family: 'Nunito', sans-serif;
+  
 
+}
+::selection{
+  color:orange;
 }
 /* 
 === wrapper for header, main and footer ===
@@ -26,11 +30,12 @@ margin:5px;
 header {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding:25px 0px;
+  padding:10px 0px;
   background: rgb(37, 36, 36);
   color:white;
-  height: 250px;;
+  min-height: 300px;;
   font-size: 150%;
 
 }
@@ -40,7 +45,6 @@ header {
 main {
   padding: 10px ;
   padding-bottom: 150px;
-  width: 95%;
   margin: auto;
   font-size: 150%;
 
@@ -56,9 +60,12 @@ color:white;
 font-weight: 100;
 border-radius: 5px;
 text-align: center;
-width: 95%;
+width: 90%;
 text-transform: uppercase;
-
+color:rgb(167,167,167);
+}
+h3:hover {
+  color:white;
 }
 /* 
 === IMAGE ===
@@ -74,13 +81,23 @@ img {
 /* 
 === HEADER nav ===
  */
+ .navbar-wrapper{
+   width:95%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ .navbar-wrapper > div {
+   width:50%;
+   margin:5px;
+ }
 
 ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width:80%;
+  /* justify-content: space-around; */
+  /* width:80%; */
   margin: auto;
   color:white ;
 }
@@ -88,13 +105,12 @@ ul li{
   list-style-type:none;
   display: block;
   min-width:15%;
-  max-width: 15%;
-  min-height: 50px;
-  max-height: 50px;
+  /* max-width: 15%; */
+  /* min-height: 50px;
+  max-height: 50px; */
   text-align:center;
-  flex-grow: 0;
-  flex-shrink: 0;
   padding:5px;
+  margin:3px;
    border:1px solid rgba(251, 164, 3, 0.1);
 }
 .nav-link{
@@ -110,36 +126,19 @@ ul li{
   color:white ;
  
 }
+.brand-name{
+  font-family: "Helvetica neue", "open sans", sans-serif;
+  font-size: 32px;
+  color:rgb(184, 138, 138);
+ background: rgb(48, 47, 47);
+ padding: 10px;
+ border-radius: 10px;
+ 
+}
 /* 
 === Add FORM ===
  */
-form {
-  margin:auto;
-}
-input {
- height: 35px;
- padding:3px;
- width:75%;
- margin: 3px;
- text-indent: 10px;
- outline: none;
- border-radius: 3px;
- border:1px solid black;
-}
-input:focus, input:hover, textarea:focus, textarea:hover{
-  border:1px solid orange;
-}
-textarea{
-  width:75%;
-  height:100px;
-  outline: none;
-   border-radius: 3px;
-   resize: none;
-}
-input::placeholder{
-  font-weight: 100;
-}
-.form-row{
+ .form-row{
   width:45vw;
   display: flex;
   flex-direction: column;
@@ -153,6 +152,39 @@ input::placeholder{
   margin:10px;
 
 }
+form {
+  margin:auto;
+}
+input {
+ height: 40px;
+ padding:3px;
+ width:100%;
+ margin: 3px;
+ text-indent: 10px;
+ outline: none;
+ border-radius: 3px;
+ border:1px solid rgb(167,167,167);
+ font-size:18px;
+}
+input::placeholder{
+  font-weight: 300;
+}
+input:focus, input:hover, textarea:focus, textarea:hover{
+  border:1px solid orange;
+}
+textarea{
+  width:100%;
+  height:100px;
+  outline: none;
+   border-radius: 3px;
+   padding:10px;
+   font-size:18px;
+   resize: none;
+    border:1px solid rgb(167,167,167);
+
+}
+
+
 /* 
 === button ===
  */
@@ -184,10 +216,13 @@ pre{
   font-family: Consolas,Monaco,andale mono,monospace;
     padding: 5px 10px;
     background: #fff;
-    border: 1px solid rgba(119, 119, 212,0.5);
+    border:1px solid rgb(240, 237, 237);
     border-radius: 3px;
-    max-width: 475px;
-    color:rgb(119, 119, 212);
+    max-width: 380px;
+    color:rgb(167,167,167)
+}
+pre:hover {
+  color:rgb(139, 191, 235);
 }
 /* 
 === in students.ejs page ===
@@ -217,4 +252,34 @@ footer {
  height: 150px;
  background: rgb(37, 36, 36);
  align-items:center;
+}
+.icons > a {
+  display: block;
+  width:50%;
+  color:rgb(167,167,167);
+}
+.fa-trash-alt, .fa-edit {
+  font-size: 28px;
+  color:rgba(189, 186, 186,0.75)
+
+}
+.fa-edit:hover {
+  color:rgb(113, 187, 247);
+}
+.fa-trash-alt:hover {
+  color:rgb(236, 112, 99);
+}
+.icons {
+  width:100px;
+  display: flex;
+  box-shadow:0px 0px 1px 1px rgb(243, 240, 240);
+  justify-content: space-around;
+  align-items: center;
+  padding:5px;
+  border-radius: 3px;
+
+}
+.about-express {
+  color: rgb(85, 85, 85);
+  font-size:28px;
 }

@@ -329,9 +329,15 @@ media query
     flex-direction: column;
     flex-wrap: nowrap;
     width:95%;
+    opacity: 0.75;
   }
   .navbar-nav {
     width:100%;
+    border:none;
+    background:rgba(216, 209, 209, 0.2);
+    border-radius: 3px;
+    margin:8px 0;
+ 
   }
    .navbar-wrapper > div {
    width:100%;
